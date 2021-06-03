@@ -91,5 +91,8 @@
             "platform": "ios",
             "required": true
         }
-    ]
+    ],
+    "appVersion": "1.0.0",
+    "buildNumber": 10,
+    "runtimeUrl": "http://192.168.10.139:1111"
 }
