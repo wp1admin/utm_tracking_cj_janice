@@ -92,7 +92,7 @@
             "required": true
         }
     ],
-    "appVersion": "1.0.0",
+    "appVersion": "1.0.301",
     "buildNumber": 10,
     "runtimeUrl": "https://moh2.apps.ap-2a.mendixcloud.com"
 }
