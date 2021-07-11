@@ -93,6 +93,6 @@
         }
     ],
     "appVersion": "1.0.3",
-    "buildNumber": 49,
-    "runtimeUrl": "https://moh2.apps.ap-2a.mendixcloud.com"
+    "buildNumber": 50,
+    "runtimeUrl": "https://moh2-accp.apps.ap-2a.mendixcloud.com"
 }
