@@ -1,6 +1,6 @@
 {
     "configVersion": 2,
-    "appIdentifier": "com.wp1.mobile",
+    "appIdentifier": "com.wp1_utm_tracking.mobile",
     "appName": "High5 eHOTO",
     "bundleName": {
         "main": "High5eHOTO",
@@ -90,44 +90,9 @@
             "purpose": "To use that feature, the app needs access to your location.",
             "platform": "ios",
             "required": true
-        },
-        {
-            "title": "Calendars Usage",
-            "name": "NSCalendarsUsageDescription",
-            "purpose": "This app requires access to the calendars.",
-            "platform": "ios",
-            "required": false
-        },
-        {
-            "title": "Photo Library Usage",
-            "name": "NSPhotoLibraryUsageDescription",
-            "purpose": "To use that feature, the app needs access to your photo library.",
-            "platform": "ios",
-            "required": false
-        },
-        {
-            "title": "Bluetooth - Peripheral Usage",
-            "name": "NSBluetoothPeripheralUsageDescription",
-            "purpose": "This app may need access to your Bluetooth connection.",
-            "platform": "ios",
-            "required": false
-        },
-        {
-            "title": "Camera Usage",
-            "name": "NSCameraUsageDescription",
-            "purpose": "The camera can be used to open apps by scanning a QR code.",
-            "platform": "ios",
-            "required": false
-        },
-        {
-            "title": "Bluetooth - Always Usage",
-            "name": "NSBluetoothAlwaysUsageDescription",
-            "purpose": "This app may need access to your Bluetooth connection.",
-            "platform": "ios",
-            "required": false
         }
     ],
     "appVersion": "1.0.4",
-    "buildNumber": 70,
+    "buildNumber": 53,
     "runtimeUrl": "https://moh2-accp.apps.ap-2a.mendixcloud.com"
 }
