@@ -7,8 +7,10 @@
 @implementation AppDelegate
 
 @synthesize shouldOpenInLastApp;
+@synthesize hasHandledLaunchAppWithOptions;
 
 - (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  MendixAppDelegate.delegate = self;
   [MendixAppDelegate application:application didFinishLaunchingWithOptions:launchOptions];
   [self setupUI];
 
@@ -49,21 +51,12 @@ fetchCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHand
   [MendixAppDelegate application:application didRegisterUserNotificationSettings:notificationSettings];
 }
 
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-  [MendixAppDelegate application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
-  return YES;
-}
-
-- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+- (BOOL) application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
 	return [MendixAppDelegate application:app openURL:url options:options];
 }
 
 - (WarningsFilter) getWarningFilterValue {
-#if DEBUG
-  return all;
-#else
-  return [AppPreferences devModeEnabled] ? partial : none;
-#endif
+  return none;
 }
 
 - (void) showUnrecoverableDialogWithTitle:(NSString *)title message:(NSString *) message {
@@ -78,5 +71,17 @@ fetchCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHand
   if (@available(iOS 13.4, *)) {
     [UIDatePicker appearance].preferredDatePickerStyle = UIDatePickerStyleWheels;
   }
+}
+
+- (void) userNotificationCenter:(UNUserNotificationCenter *)center
+        willPresentNotification:(UNNotification *)notification
+          withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler {
+  [MendixAppDelegate userNotificationCenter:center willPresentNotification:notification withCompletionHandler:completionHandler];
+}
+
+- (void) userNotificationCenter:(UNUserNotificationCenter *)center
+    didReceiveNotificationResponse:(UNNotificationResponse *)response
+             withCompletionHandler:(void (^)(void))completionHandler {
+  [MendixAppDelegate userNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
 }
 @end
