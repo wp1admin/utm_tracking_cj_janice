@@ -92,7 +92,7 @@
             "required": true
         }
     ],
-    "appVersion": "1.0.5",
+    "appVersion": "1.0.4",
     "buildNumber": 85,
     "runtimeUrl": "https://moh2-accp.apps.ap-2a.mendixcloud.com"
 }
